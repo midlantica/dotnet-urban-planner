@@ -8,13 +8,14 @@ namespace Planner
     {
       Building theTaj = new Building();
       theTaj.Address("1020 Battlefield Dr");
-      theTaj.Designer("Designer");
-      // theTaj.Constructed();
+      theTaj.Designer("Fancy Pants Designer");
+      // theTaj.Constructed("DateTime.Now");
       theTaj.Owner("Mr Big");
-      // theTaj.Volume();
+      theTaj.SetVolume(2, 2, 2);
 
-      Console.WriteLine(theTaj.Address("A1020 Battlefield Dr"));
-      Console.WriteLine(theTaj.Description;
+      // Console.WriteLine(theTaj.GetAddress());
+      Console.WriteLine(theTaj.GetDescription);
     }
   }
 }
+
