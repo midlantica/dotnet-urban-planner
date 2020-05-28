@@ -15,12 +15,15 @@ namespace Planner
     public int Depth { get; set; }
     public int Stories { get; set; }
 
-    // 
+    //
     public Building(){}
     public void Designer(string designer) => _designer += designer;
     public void Address(string address) => _address += address;
     public void Owner(string owner) => _owner += owner;
-    public int GetVolume() => Width * Depth * (3 * Stories);
+    public int GetVolume()
+    {
+      return Width* Depth *(3 * Stories);
+    }
     public void Constructed() => _dateConstructed = DateTime.Now;
     public string GetDesigner() => _designer;
     public string GetAddress() => _address;
@@ -37,10 +40,10 @@ namespace Planner
 |  Name:    {Name}
 |  Address: {GetAddress()}
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-|  Designer:  | {GetDesigner()}
-|  Date Time: | {GetConstructed()}
-|  Owner:     | {GetOwner()}
-|  Volume:    | {GetVolume()}
+|  Designer:    | {GetDesigner()}
+|  Date & Time: | {GetConstructed()}
+|  Owner:       | {GetOwner()}
+|  Volume:      | {GetVolume().ToString("#,##0")} sq. ft.
 ---------------------------------------------------
         ";
       }
