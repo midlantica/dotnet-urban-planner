@@ -16,21 +16,21 @@ namespace Planner
 
     public Building(){}
 
-    public string Designer(string designer)
+    public string Designer()
     {
-      return _designer = designer;
+      return _designer;
     }
     public DateTime Constructed()
     {
       return _dateConstructed = DateTime.Now;
     }
-    public string Address(string address)
+    public string Address()
     {
-      return _address = address;
+      return _address;
     }
-    public string Owner(string owner)
+    public string Owner()
     {
-      return _owner = owner;
+      return _owner;
     }
 
     public double Volume()
@@ -38,13 +38,13 @@ namespace Planner
       return Width * Depth * (3 * Stories);
     }
 
-    // public string Description
-    // {
-    //   get
-    //   {
-    //     return $"Building: {Designer()} {Constructed()} {Owner()} {Volume()}";
-    //   }
-    // }
+    public string Description
+    {
+      get
+      {
+        return $"Building: {Designer()} {Constructed()} {Owner()} {Volume()}";
+      }
+    }
 
   }
 }

@@ -14,7 +14,7 @@ namespace Planner
       // theTaj.Volume();
 
       Console.WriteLine(theTaj.Address("A1020 Battlefield Dr"));
-      // Console.WriteLine(theTaj.Description());
+      Console.WriteLine(theTaj.Description;
     }
   }
 }
