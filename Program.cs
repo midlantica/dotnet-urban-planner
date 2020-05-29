@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Planner
 {
@@ -27,9 +28,49 @@ namespace Planner
       theHoopy.Stories = 3;
       theHoopy.Designer("Fancy Architecture Co.");
 
+      //Building 3
+      // Building JacksonHospital = new Building()
+      // {
+      //   Name = "Jackson Hospital",
+      //   _address = "101 Jackson Dr",
+      //   Owner = "Fred Williams",
+      //   Width = 50_000,
+      //   Depth = 50_000,
+      //   Stories = 10,
+      //   Designer = "PUblic Architecture Co."
+      // };
+
       // Write it out
-      Console.WriteLine(theTaj.GetDescription);
-      Console.WriteLine(theHoopy.GetDescription);
+      Console.WriteLine(theTaj.GetBuildingDescription);
+      Console.WriteLine(theHoopy.GetBuildingDescription);
+
+      // City >>>>>>>>>>>>>>>
+      City Nashville = new City();
+      Nashville.Name = "Nashville";
+      Nashville.Mayor = "Jim Flannagan";
+      Nashville.DateEstablished = DateTime.Now;
+      Nashville.AddBuilding(theTaj);
+
+
+      City Chattanooga = new City();
+      City Knoxville = new City();
+      City Franklin = new City();
+      City Memphis = new City();
+
+      Console.WriteLine(Nashville.GetCityDescription);
+
+      List<string> buildings = new List<string>();
+      buildings.Add("Martin's BBQ");
+      buildings.Add("Edleys' BBQ");
+      buildings.Add("Peg Leg Porker");
+      buildings.Add("Jack's BBQ");
+
+      Console.WriteLine($"{Nashville.Name}'s BBQ Joints");
+
+      foreach (Building building in Nashville.Buildings) {
+        Console.WriteLine(building.GetBuildingDescription);
+      }
+
     }
   }
 }
