@@ -28,8 +28,11 @@ namespace Planner
     public string GetAddress() => _address;
     public string GetOwner() => _owner;
     public DateTime GetConstructed() => _dateConstructed;
+    public List<string> Buildings {get; set;}
 
-    public string GetDescription
+
+
+    public string GetBuildingDescription
     {
       get
       {

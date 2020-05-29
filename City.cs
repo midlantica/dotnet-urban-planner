@@ -6,17 +6,16 @@ namespace Planner
   public class City
   {
     public string Name { get; set; }
-    public DateTime dateEstablished { get; set; }
     public string Mayor { get; set; }
-    public int NumberOfBuildings { get;  set; }
+    public DateTime DateEstablished { get; set; }
 
-    //
-    public City(){}
-    public void Established() => dateEstablished = DateTime.Now;
-    public DateTime GetDateEstablished() => dateEstablished;
+    public List<Building> Buildings { get; } = new List<Building>();
 
-    public int GetBuildings() => NumberOfBuildings;
-    public string GetDescription
+    public void AddBuilding(Building buildingToAdd) {
+      Buildings.Add(buildingToAdd);
+    }
+
+    public string GetCityDescription
     {
       get
       {
@@ -25,8 +24,7 @@ namespace Planner
 ---------------------------------------------------
 |  City:        | {Name}
 |  Mayor:       | {Mayor}
-|  Date & Time: | {GetDateEstablished()}
-|  Buildings:   | {GetBuildings()} // ??
+|  Date & Time: | {DateEstablished}
 ---------------------------------------------------
         ";
       }
